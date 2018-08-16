@@ -2,6 +2,30 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+// Basic Structure
+  // App.Js
+    // MemeBracket
+    // MemePool (contains all of the created memes)
+    // FaceoffContainer (renders during the 'bracket phase')
+    //
+    // **RouterComponents**
+    //
+    //   ImgurImagesContainer
+    //     ImgurImagesForm (search, etc.)
+    //     Meme
+    //       ImgurImage (selected image from the container)
+    //       CaptionForm\
+    //
+    //   UserProfilePage
+    //     UserMemeContainer (contains memes, can be deleted)
+
+
+
+
+
+
+
 class App extends Component {
   render() {
     return (
