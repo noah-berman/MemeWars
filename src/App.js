@@ -1,12 +1,41 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './NavBar';
 
-//Routing and Nav Bar here
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+            <Router>
+              <div>
+                <Navbar />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/user" component={User} />
+                <Route exact path="/all_memes" component={MemePool} />
+              </div>
+            </Router>
+        </p>
+      </div>
+    );
+  }
+}
+
+// <Route exact path="/" component={Home} />                    Create a New Meme
+// <Route exact path="/user" component={User} />                User Profile Page, which shows all memes
+// <Route exact path="/all_memes" component={MemePool} />       All Memes for upvoting/downvoting
 
 
-// Basic Structure
+export default App;
+
+////BASIC STRUCTURE//////////////////////////////////////////////////////////
+
   // App.Js
     // MemeBracket
     // MemePool (contains all of the created memes)
@@ -22,30 +51,3 @@ import NavBar from './components/NavBar';
     //
     //   UserProfilePage
     //     UserMemeContainer (contains memes, can be deleted)
-
-
-//create new meme.
-// preview.
-//published to the meme MemePool.
-//user.
-
-
-
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          <NavBar />
-        </p>
-      </div>
-    );
-  }
-}
-
-export default App;

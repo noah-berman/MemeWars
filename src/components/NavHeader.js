@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../images/logo.png'
 
-const NavBar = () => {
+const NavHeader = () => {
 	return (
 		<div className="navBar">
 			<span className="headerText">Meme Wars</span>
@@ -13,4 +13,4 @@ const NavBar = () => {
 	)
 }
 
-export default NavBar
+export default NavHeader;
