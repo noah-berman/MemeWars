@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.fireLogo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.headerText {
+  font-size: large;
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+}

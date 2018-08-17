@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+
+//Routing and Nav Bar here
 
 
 // Basic Structure
@@ -21,7 +24,10 @@ import './App.css';
     //     UserMemeContainer (contains memes, can be deleted)
 
 
-
+//create new meme.
+// preview.
+//published to the meme MemePool.
+//user.
 
 
 
@@ -35,7 +41,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <NavBar />
         </p>
       </div>
     );
