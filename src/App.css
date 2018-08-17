@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -25,4 +25,37 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+} */
+
+img.search-result-image {
+  /* max-width: 200px; */
+  max-height: 200px;
+}
+
+#search-selector {
+  margin: 30px;
+}
+
+#search-form {
+  margin: 30px;
+}
+
+#search-bar {
+  font-size: 36px;
+}
+
+.prevnext-button {
+  font-size: 24px;
+}
+
+.search-selector-button {
+  display: inline;
+  /* border-color: grey;
+  border-style: solid; */
+}
+
+.search-selector-button-image {
+  margin: 30px;
+  max-height: 200px;
+  max-width: 200px;
 }
