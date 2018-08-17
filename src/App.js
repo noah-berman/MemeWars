@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import AppPage from './AppPage';
 
 
-// Basic Structure
+
   // App.Js
-    // MemeBracket
-    // MemePool (contains all of the created memes)
-    // FaceoffContainer (renders during the 'bracket phase')
-    //
-    // **RouterComponents**
-    //
-    //   ImgurImagesContainer
-    //     ImgurImagesForm (search, etc.)
-    //     Meme
-    //       ImgurImage (selected image from the container)
-    //       CaptionForm\
-    //
-    //   UserProfilePage
-    //     UserMemeContainer (contains memes, can be deleted)
+    // MemePage
+      // Header
+      // NavBar
+      // MemeBracket
+      // MemePool (contains all of the created memes)
+      // FaceoffContainer (renders during the 'bracket phase')
+      //
+      // **RouterComponents**
+      //
+      //   ImgurImagesContainer
+      //     ImgurImagesForm (search, etc.)
+      //     Meme
+      //       ImgurImage (selected image from the container)
+      //       CaptionForm\
+      //
+      //   UserProfilePage
+      //     UserMemeContainer (contains memes, can be deleted)
 
 
 
@@ -27,19 +31,28 @@ import './App.css';
 
 
 class App extends Component {
+
+  state = {
+    images: []
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <AppPage images={this.state.images} />
       </div>
     );
   }
+
+  componentDidMount(){
+   fetch('https://bot-battler-api.herokuapp.com/api/v1/bots')
+     .then(response => response.json())
+     .then(data => {
+       this.setState ({
+         images: data
+       })
+     })
+   }
 }
 
 export default App;
