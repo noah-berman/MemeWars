@@ -6,7 +6,7 @@ import AppPage from './AppPage';
 
 
   // App.Js
-    // MemePage
+    // AppPage
       // Header
       // NavBar
       // MemeBracket
@@ -33,13 +33,21 @@ import AppPage from './AppPage';
 class App extends Component {
 
   state = {
-    images: []
+    images: [],
+    displayImages: [],
+    captionFieldId: ''
+  }
+
+  renderCaptionField = (objId) => {
+    this.setState ({
+      captionFieldId: objId
+    });
   }
 
   render() {
     return (
-      <div className="App">
-        <AppPage images={this.state.images} />
+      <div>
+        <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId}/>
       </div>
     );
   }
@@ -49,7 +57,8 @@ class App extends Component {
      .then(response => response.json())
      .then(data => {
        this.setState ({
-         images: data
+         images: data,
+         displayImages: data
        })
      })
    }
