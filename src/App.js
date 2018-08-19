@@ -13,10 +13,6 @@ class App extends Component {
   }
 }
 
-// <Route exact path="/" component={Home} />                    Create a New Meme
-// <Route exact path="/user" component={User} />                User Profile Page, which shows all memes
-// <Route exact path="/all_memes" component={MemePool} />       All Memes for upvoting/downvoting
-
 
 export default App;
 
