@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, NavLink } from 'react-router-dom';
 import '../App.css';
+import '../index.css';
 import logo from '../images/logo.png'
 import UserProfilePage from './UserProfilePage'
 import MemePool from './MemePool'
@@ -31,14 +32,14 @@ const NavHeader = () => {
 				<h1 className="App-title">Meme Wars</h1>
 				<span className="tagline">One Meme to Rule Them All</span>
 				<p>
-							<NavLink to="/home" style={linkStyle} activeClassName="active"> Create </NavLink>
-							<NavLink to="/user" style={linkStyle} activeClassName="active"> Profile </NavLink>
-							<NavLink to="/all_memes" style={linkStyle} activeClassName="active"> All Memes </NavLink>
+							<NavLink activeClassName="active" to="/home" style={linkStyle}> Create </NavLink>
+							<NavLink activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
+							<NavLink activeClassName="active" to="/all_memes" style={linkStyle}> All Memes </NavLink>
 				</p>
 			</header>
 			<body>
 				<p className="App-intro">
-								<Route path="/" component={ home } />
+								<Route path="/home" component={ home } />
 								<Route path="/profile" component={ profile } />
 								<Route path="/all_memes" component={ memePool } />
 				</p>

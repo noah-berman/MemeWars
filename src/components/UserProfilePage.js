@@ -5,7 +5,7 @@ class UserProfilePage extends Component {
   render() {
     return (
       <div>
-      Welcome, Friend!
+        Welcome, Friend!
       </div>
     )
   }
