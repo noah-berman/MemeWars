@@ -3,7 +3,6 @@
 import React from 'react'
 import SearchImagesForm from './SearchImagesForm'
 import SearchImagesResults from './SearchImagesResults'
-
 import {imgurClientId, giphyKey} from '../apikeys/apikeys.js'
 
 export default class SearchImagesContainer extends React.Component {

@@ -8,26 +8,25 @@ class CaptionForm extends Component {
     caption: ""
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({
       caption: event.target.value
     })
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.props.parentImageId)
-
+    this.props.setCaption(this.state.caption)
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Caption:
-          <input type="text" value={this.state.value} name="caption" />
+          <textarea type="text" value={this.state.caption} name="caption" onChange={this.handleChange} placeholder="Enter Meme Caption..." cols="40" rows="20"></textarea>
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" className="button" value="Publish" />
       </form>
     )
 

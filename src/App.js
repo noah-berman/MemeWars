@@ -3,6 +3,7 @@ import './App.css';
 import AppPage from './components/AppPage'
 import SearchImagesContainer from './components/SearchImagesContainer'
 import NavHeader from './components/NavHeader';
+import MemeCreater from './components/MemeCreater'
 
 
 class App extends Component {
@@ -25,7 +26,8 @@ class App extends Component {
       <div className="App">
         <NavHeader />
         <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId}/>
-        <SearchImagesContainer />
+        <SearchImagesContainer/>
+        <MemeCreater allMemes={this.props.allMemes} url={this.state.url}/> //assuming allMemes passed through 
       </div>
     );
   }

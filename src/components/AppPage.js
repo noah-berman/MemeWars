@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import CaptionForm from './CaptionForm'
 
 class AppPage extends Component {
