@@ -25,7 +25,7 @@ const profile = () => <UserProfilePage />;;
 const memePool = () => <MemePool />;
 
 
-const NavHeader = () => {
+const NavHeader = (props) => {
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -33,9 +33,9 @@ const NavHeader = () => {
 				<h1 className="App-title">Meme Wars</h1>
 				<span className="tagline">One Meme to Rule Them All</span>
 				<span>
-							<NavLink activeClassName="active" to="/home" style={linkStyle}> Create </NavLink>
-							<NavLink activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
-							<NavLink activeClassName="active" to="/all_memes" style={linkStyle}> All Memes </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/home" style={linkStyle}> Home </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/all_memes" style={linkStyle}> All Memes </NavLink>
 				</span>
 			</header>
 			<div>
