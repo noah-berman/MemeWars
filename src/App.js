@@ -1,10 +1,38 @@
 import React, { Component } from 'react';
 import './App.css';
+<<<<<<< HEAD
 import NavHeader from './components/NavHeader';
 import AppPage from './AppPage'
 
 ////BASIC STRUCTURE//////////////////////////////////////////////////////////
 
+=======
+
+
+
+
+
+
+////BASIC STRUCTURE//////////////////////////////////////////////////////////
+
+  // App.Js
+
+    // MemeBracket
+    // MemePool (contains all of the created memes)
+    // FaceoffContainer (renders during the 'bracket phase')
+    //
+    // **RouterComponents**
+    //
+    //   ImgurImagesContainer
+    //     ImgurImagesForm (search, etc.)
+    //     Meme
+    //       ImgurImage (selected image from the container)
+    //       CaptionForm\
+    //
+    //   UserProfilePage
+    //     UserMemeContainer (contains memes, can be deleted)
+
+>>>>>>> 2c16af0ecbe1feade9353dbb750b51a4fea404ca
     // AppPage
       // Header
       // NavBar
@@ -26,6 +54,10 @@ import AppPage from './AppPage'
 
 
 
+import AppPage from './components/AppPage'
+import SearchImagesContainer from './components/SearchImagesContainer'
+import NavHeader from './components/NavHeader';
+
 
 
 
@@ -46,9 +78,18 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
+
+        <NavHeader />
+
         <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId}/>
+<<<<<<< HEAD
         <NavHeader/>
+=======
+
+        <SearchImagesContainer />
+
+>>>>>>> 2c16af0ecbe1feade9353dbb750b51a4fea404ca
       </div>
     );
   }

@@ -5,9 +5,15 @@ import '../index.css';
 import logo from '../images/logo.png'
 import UserProfilePage from './UserProfilePage'
 import MemePool from './MemePool'
+<<<<<<< HEAD
 import ImgurImagesContainer from './ImgurImagesContainer'          //double check this is the correct component?
 import MemeBracket from './MemeBracket'
 import Meme from './Meme'
+=======
+import SearchImagesContainer from './SearchImagesContainer'
+       //double check this is the correct component?
+
+>>>>>>> 2c16af0ecbe1feade9353dbb750b51a4fea404ca
 
 // NavLinks styling
 const linkStyle = {
@@ -20,10 +26,16 @@ const linkStyle = {
 }
 
 
+<<<<<<< HEAD
 const home = () => <ImgurImagesContainer />;
 const profile = () => <Meme />;;
 const memePool = () => <MemeBracket />;
 //add more routes
+=======
+const home = () => <SearchImagesContainer />;
+const profile = () => <UserProfilePage />;;
+const memePool = () => <MemePool />;
+>>>>>>> 2c16af0ecbe1feade9353dbb750b51a4fea404ca
 
 
 const NavHeader = () => {
@@ -33,19 +45,19 @@ const NavHeader = () => {
 				<img src={logo} className="fireLogo" alt="" />
 				<h1 className="App-title">Meme Wars</h1>
 				<span className="tagline">One Meme to Rule Them All</span>
-				<p>
+				<span>
 							<NavLink activeClassName="active" to="/home" style={linkStyle}> Create </NavLink>
 							<NavLink activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
 							<NavLink activeClassName="active" to="/all_memes" style={linkStyle}> All Memes </NavLink>
-				</p>
+				</span>
 			</header>
-			<body>
-				<p className="App-intro">
+			<div>
+				<span className="App-intro">
 								<Route path="/home" component={ home } />
 								<Route path="/profile" component={ profile } />
 								<Route path="/all_memes" component={ memePool } />
-				</p>
-			</body>
+				</span>
+			</div>
 		</div>
 	)
 }

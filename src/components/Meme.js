@@ -1,5 +1,4 @@
 import React,  { Component } from 'react'
-import Image from './ImgurImage'
 import CaptionForm from './CaptionField'
 
 //Just created some CSS for background over-ride, enlargment, flexible boundaries, etc.

@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import Image from './components/ImgurImage';
-import CaptionForm from './components/CaptionForm'
+import React, { Component } from 'react';
+
+import CaptionForm from './CaptionForm'
 
 class AppPage extends Component {
 
@@ -19,7 +19,7 @@ class AppPage extends Component {
 
 
   captionFieldLogic = id => {
-    return (id === parseInt(this.props.captionFieldId)) ? <CaptionForm parentImageId={id} /> : null
+    return (id === Number(this.props.captionFieldId)) ? <CaptionForm parentImageId={id} /> : null
   }
 
   handleClick = event => {
