@@ -19,7 +19,7 @@ class AppPage extends Component {
 
 
   captionFieldLogic = id => {
-    return (id === parseInt(this.props.captionFieldId)) ? <CaptionForm /> : null
+    return (id === parseInt(this.props.captionFieldId)) ? <CaptionForm parentImageId={id} /> : null
   }
 
   handleClick = event => {

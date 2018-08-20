@@ -35,7 +35,8 @@ class App extends Component {
   state = {
     images: [],
     displayImages: [],
-    captionFieldId: ''
+    captionFieldId: '',
+    memeObjs: [],
   }
 
   renderCaptionField = (objId) => {

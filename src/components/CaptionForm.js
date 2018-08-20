@@ -16,6 +16,7 @@ class CaptionForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.props.parentImageId)
 
   }
 
