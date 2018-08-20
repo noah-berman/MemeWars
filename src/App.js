@@ -46,7 +46,7 @@ import './App.css';
 
 
 
-
+import AppPage from './components/AppPage'
 import SearchImagesContainer from './components/SearchImagesContainer'
 import NavHeader from './components/NavHeader';
 
