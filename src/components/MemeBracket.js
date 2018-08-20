@@ -1,4 +1,5 @@
 //Bracket of top 16/32/whatever most-voted memes that will face off against each other
+<<<<<<< HEAD
 import React, { Component } from 'react'
 import '../App.css'
 import trophy from '../images/trophy.png'
@@ -115,3 +116,6 @@ class MemeBracket extends Component {
 }
 
 export default MemeBracket;
+=======
+export default MemeBracket
+>>>>>>> noahv2
