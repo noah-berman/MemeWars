@@ -1,40 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavHeader from './components/NavHeader';
-
-class App extends Component {
-
-  render() {
-    return (
-      <div>
-        <NavHeader />
-      </div>
-    );
-  }
-}
-
-
-export default App;
+import AppPage from './AppPage'
 
 ////BASIC STRUCTURE//////////////////////////////////////////////////////////
 
-  // App.Js
-<<<<<<< HEAD
-    // MemeBracket
-    // MemePool (contains all of the created memes)
-    // FaceoffContainer (renders during the 'bracket phase')
-    //
-    // **RouterComponents**
-    //
-    //   ImgurImagesContainer
-    //     ImgurImagesForm (search, etc.)
-    //     Meme
-    //       ImgurImage (selected image from the container)
-    //       CaptionForm\
-    //
-    //   UserProfilePage
-    //     UserMemeContainer (contains memes, can be deleted)
-=======
     // AppPage
       // Header
       // NavBar
@@ -78,6 +48,7 @@ class App extends Component {
     return (
       <div>
         <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId}/>
+        <NavHeader/>
       </div>
     );
   }
@@ -95,4 +66,3 @@ class App extends Component {
 }
 
 export default App;
->>>>>>> 5c69d18ae46460d5d59052b864d27da56b60df5b

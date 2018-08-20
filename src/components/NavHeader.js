@@ -6,7 +6,8 @@ import logo from '../images/logo.png'
 import UserProfilePage from './UserProfilePage'
 import MemePool from './MemePool'
 import ImgurImagesContainer from './ImgurImagesContainer'          //double check this is the correct component?
-
+import MemeBracket from './MemeBracket'
+import Meme from './Meme'
 
 // NavLinks styling
 const linkStyle = {
@@ -20,8 +21,9 @@ const linkStyle = {
 
 
 const home = () => <ImgurImagesContainer />;
-const profile = () => <UserProfilePage />;;
-const memePool = () => <MemePool />;
+const profile = () => <Meme />;;
+const memePool = () => <MemeBracket />;
+//add more routes
 
 
 const NavHeader = () => {
@@ -49,7 +51,3 @@ const NavHeader = () => {
 }
 
 export default NavHeader;
-
-// const Home = () => <h1>Create a Meme!</h1>;
-// const Profile = () => <h1> Welcome, Friend!</h1>;
-// const MemePool = () => <h1>Vote for your Favorites!</h1>;
