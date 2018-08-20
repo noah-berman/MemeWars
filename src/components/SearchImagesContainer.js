@@ -36,22 +36,20 @@ export default class SearchImagesContainer extends React.Component {
       this.setState({
         prevImgurSearch: this.state.search,
         imgurPage: 0
-      }, ()=>this.imgurSearch())
+      }, ()=>this.imgurSearch(this.state.search))
     } else if (this.state.api === 'giphy'){
       this.setState({
         prevGiphySearch: this.state.search,
         giphyOffset: 0
-      }, ()=>this.giphySearch())
+      }, ()=>this.giphySearch(this.state.search))
     } else {
       console.warn('no api selected')
     }
   }
 
-// TODO: sort imgur results into image collection instead of albums, filter non-cooperative image links (mp4, gifv)
-  imgurSearch = () => {
+  imgurSearch = (query) => {
     const url = 'https://api.imgur.com/3/gallery/search/time/all/'
     const page = this.state.imgurPage
-    const query = '?q=' + this.state.search
     // const params = '&q_type=jpg'
     const config = {
       // "async": true,
@@ -61,49 +59,64 @@ export default class SearchImagesContainer extends React.Component {
         "Authorization": `Client-ID ${imgurClientId}`
       }
     }
-    fetch(url + page + query/* + params*/, config)
+    fetch(url + page + '?q=' + query/* + params*/, config)
     .then(res=>res.json())
     .then(obj=>{console.log(obj); return obj})
     .then(obj=>this.setState({
-      imgurResults: obj.data,
+      imgurResults: this.stageImgurData(obj.data),
       giphyResults: [],
-      prevGiphySearch: ''
+      prevGiphySearch: '',
+      search: ''
     }, ()=>console.log(this.state))
     )
+  }
+
+  stageImgurData = (data) => {
+    const newArray = []
+    data.forEach(resource => {
+      if (resource.images) { // "is_album" property seemed unreliable in determining if a resource contains multiple images
+        resource.images.forEach(image => {
+          if (image.type !== 'image/gif' && image.type !== 'video/mp4') {
+            newArray.push(image)
+          }
+        })
+      } else {
+        if (resource.type !== 'image/gif' && resource.type !== 'video/mp4') {
+          newArray.push(resource)
+        }
+      }
+    })
+    console.log('staged imgur data', newArray)
+    return newArray
   }
 
   imgurNext = () => {
     this.setState({
       imgurPage: this.state.imgurPage + 1
-    }, ()=>this.imgurSearch())
+    }, ()=>this.imgurSearch(this.state.prevImgurSearch))
   }
 
   imgurPrev = () => {
     if (this.state.imgurPage > 0){
       this.setState({
         imgurPage: this.state.imgurPage - 1
-      }, ()=>this.imgurSearch())
+      }, ()=>this.imgurSearch(this.state.prevImgurSearch))
     }
   }
 
-  giphySearch = () => {
+  giphySearch = (query) => {
     const url = 'http://api.giphy.com/v1/gifs/search'
-    let query;
-    if (this.state.giphyOffset === 0){
-      query = '?q=' + this.state.search
-    } else {
-      query = '?q=' + this.state.prevGiphySearch
-    }
     const apiKey = `&api_key=${giphyKey}`
     const limit = '&limit=30'
     const offset = '&offset=' + this.state.giphyOffset
-    fetch(url + query + apiKey + limit + offset)
+    fetch(url + '?q=' + query + apiKey + limit + offset)
     .then(res=>res.json())
     .then(obj=>{console.log(obj); return obj})
     .then(obj=>this.setState({
       imgurResults: [],
       giphyResults: obj.data,
-      prevImgurSearch: ''
+      prevImgurSearch: '',
+      search: ''
     }, ()=>console.log(this.state))
     )
   }
@@ -111,14 +124,14 @@ export default class SearchImagesContainer extends React.Component {
   giphyNext = () => {
     this.setState({
       giphyOffset: this.state.giphyOffset + 30
-    }, ()=>this.giphySearch())
+    }, ()=>this.giphySearch(this.state.prevGiphySearch))
   }
 
   giphyPrev = () => {
     if (this.state.giphyOffset > 0){
       this.setState({
         giphyOffset: this.state.giphyOffset - 30
-      }, ()=>this.giphySearch())
+      }, ()=>this.giphySearch(this.state.prevGiphySearch))
     }
   }
 

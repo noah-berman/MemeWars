@@ -1,61 +1,84 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
-
-img.search-result-image {
-  /* max-width: 200px; */
-  max-height: 200px;
-}
-
-#search-selector {
-  margin: 30px;
+.App {
+  background-color: #101010;
 }
 
 #search-form {
   margin: 30px;
 }
 
-#search-bar {
-  font-size: 36px;
+#search-selector {
+  margin: 30px;
+  text-align: center;
 }
 
-.prevnext-button {
-  font-size: 24px;
+#search-form-wrapper {
+  text-align: center;
+}
+
+#search-bar {
+  font-size: 36px;
+  background-color: #BEBEBE;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .search-selector-button {
   display: inline;
   /* border-color: grey;
   border-style: solid; */
+  border-style: solid;
+  border-color: black;
+  border-radius: 20px;
+  background-color: #808080;
+  display:inline-block;
+}
+.lit {
+  background-color: green;
 }
 
 .search-selector-button-image {
   margin: 30px;
   max-height: 200px;
   max-width: 200px;
+  margin: 10px;
+}
+
+#results-wrapper {
+  border-style: solid;
+  border-color: black;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #484848;
+}
+
+#prevnext-button-wrapper {
+  text-align: center;
+}
+
+.prevnext-button {
+  font-size: 24px;
+  background-color: #BEBEBE;
+  padding: 5px;
+  margin: 5px;
+  border-style: solid;
+  border-radius: 10px;
+}
+.prevnext-button:active {
+  background-color: green;
+}
+
+img.search-result-image {
+  /* max-width: 200px; */
+  max-height: 200px;
+}
+
+.search-result-image-wrapper {
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  display:inline-block;
+  background-color: #808080;
 }
