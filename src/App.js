@@ -1,16 +1,48 @@
 import React, { Component } from 'react';
 import './App.css';
-<<<<<<< HEAD
+import AppPage from './components/AppPage'
+import SearchImagesContainer from './components/SearchImagesContainer'
 import NavHeader from './components/NavHeader';
-import AppPage from './AppPage'
-
-////BASIC STRUCTURE//////////////////////////////////////////////////////////
-
-=======
 
 
+class App extends Component {
 
+  state = {
+    images: [],
+    displayImages: [],
+    captionFieldId: '',
+    memeObjs: [],
+  }
 
+  renderCaptionField = (objId) => {
+    this.setState ({
+      captionFieldId: objId
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <NavHeader />
+        <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId}/>
+        <SearchImagesContainer />
+      </div>
+    );
+  }
+
+  componentDidMount(){
+   fetch('https://bot-battler-api.herokuapp.com/api/v1/bots')
+     .then(response => response.json())
+     .then(data => {
+       this.setState ({
+         images: data,
+         displayImages: data
+       })
+     })
+   }
+}
+
+export default App;
 
 
 ////BASIC STRUCTURE//////////////////////////////////////////////////////////
@@ -32,7 +64,6 @@ import AppPage from './AppPage'
     //   UserProfilePage
     //     UserMemeContainer (contains memes, can be deleted)
 
->>>>>>> 2c16af0ecbe1feade9353dbb750b51a4fea404ca
     // AppPage
       // Header
       // NavBar
@@ -50,60 +81,3 @@ import AppPage from './AppPage'
       //
       //   UserProfilePage
       //     UserMemeContainer (contains memes, can be deleted)
-
-
-
-
-import AppPage from './components/AppPage'
-import SearchImagesContainer from './components/SearchImagesContainer'
-import NavHeader from './components/NavHeader';
-
-
-
-
-class App extends Component {
-
-  state = {
-    images: [],
-    displayImages: [],
-    captionFieldId: '',
-    memeObjs: [],
-  }
-
-  renderCaptionField = (objId) => {
-    this.setState ({
-      captionFieldId: objId
-    });
-  }
-
-  render() {
-    return (
-      <div className="App">
-
-        <NavHeader />
-
-        <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId}/>
-<<<<<<< HEAD
-        <NavHeader/>
-=======
-
-        <SearchImagesContainer />
-
->>>>>>> 2c16af0ecbe1feade9353dbb750b51a4fea404ca
-      </div>
-    );
-  }
-
-  componentDidMount(){
-   fetch('https://bot-battler-api.herokuapp.com/api/v1/bots')
-     .then(response => response.json())
-     .then(data => {
-       this.setState ({
-         images: data,
-         displayImages: data
-       })
-     })
-   }
-}
-
-export default App;

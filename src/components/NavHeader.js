@@ -5,15 +5,8 @@ import '../index.css';
 import logo from '../images/logo.png'
 import UserProfilePage from './UserProfilePage'
 import MemePool from './MemePool'
-<<<<<<< HEAD
-import ImgurImagesContainer from './ImgurImagesContainer'          //double check this is the correct component?
-import MemeBracket from './MemeBracket'
-import Meme from './Meme'
-=======
 import SearchImagesContainer from './SearchImagesContainer'
-       //double check this is the correct component?
 
->>>>>>> 2c16af0ecbe1feade9353dbb750b51a4fea404ca
 
 // NavLinks styling
 const linkStyle = {
@@ -26,16 +19,9 @@ const linkStyle = {
 }
 
 
-<<<<<<< HEAD
-const home = () => <ImgurImagesContainer />;
-const profile = () => <Meme />;;
-const memePool = () => <MemeBracket />;
-//add more routes
-=======
 const home = () => <SearchImagesContainer />;
 const profile = () => <UserProfilePage />;;
 const memePool = () => <MemePool />;
->>>>>>> 2c16af0ecbe1feade9353dbb750b51a4fea404ca
 
 
 const NavHeader = () => {

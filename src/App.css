@@ -1,9 +1,8 @@
-/* /////////////////NAV BAR HEADER //////////////////////////////*/
+/* /////////////////NAV BAR HEADER & SEARCH//////////////////////////////*/
 
 .App {
   background-color: #101010;
 }
-
 #search-form {
   margin: 30px;
 }
