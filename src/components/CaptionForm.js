@@ -1,6 +1,7 @@
 //Form to create a caption for the image
 
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class CaptionForm extends Component {
 
@@ -16,21 +17,24 @@ class CaptionForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.setCaption(this.state.caption)
+    this.props.writeCaption(this.state.caption)
   }
+
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Caption:
-          <textarea type="text" value={this.state.caption} name="caption" onChange={this.handleChange} placeholder="Enter Meme Caption..." cols="40" rows="20"></textarea>
+          <textarea type="text" value={this.state.caption} name="caption" onChange={this.handleChange} placeholder="Enter Meme Caption..." cols="20" rows="5"></textarea>
         </label>
-        <input type="submit" className="button" value="Publish" />
+        <span>
+          <NavLink className="button" to="/" memeObjs={this.props.memeObjs}> Publish </NavLink>
+        </span>
       </form>
     )
-
   }
+
+//button: type="submit"
 
 }
 

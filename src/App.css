@@ -1,8 +1,33 @@
 /* /////////////////NAV BAR HEADER & SEARCH//////////////////////////////*/
 
 .App {
-  background-color: #101010;
+  background-color: white;
 }
+
+.App-header {
+  margin: auto;
+  text-align: center;
+}
+
+.App-header h1 {
+  margin: 5px;
+  text-align: center;
+}
+
+.App-header span {
+  display: block;
+  margin: 20px;
+}
+
+.App-header .tagline {
+  display: block;
+  margin: 10px;
+}
+
+.Header-Container {
+  margin: auto;
+}
+
 #search-form {
   margin: 30px;
 }
@@ -11,6 +36,58 @@
   margin: 30px;
   text-align: center;
 }
+
+/*//////////////////////FACEOFF CONTAINER//////////////////////////////////*/
+
+.faceoff-container {
+  background-color: grey;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+}
+
+
+.faceoff-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
+
+/*//////////////////////MEME COMPONENT//////////////////////////////////*/
+
+.image-container {
+  display: inline-block;
+  width: 25%;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: blue;
+  font-size: 2em;
+  text-align: center;
+  border: 2px silver solid;
+}
+
+.image-container img {
+  display: inline;
+  max-height: 540px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0;
+  vertical-align: top;
+}
+
+figcaption {
+  background-color: black;
+  color: yellow;
+  font-family: Impact;
+  text-transform: uppercase;
+}
+
+/*//////////////////////HEADER COMPONENT//////////////////////////////////*/
 
 .App-header {
   background-color: #1CC1AA;
@@ -21,6 +98,10 @@
 
 .App-title {
   font-size: 2.0em;
+}
+
+#search-images-container {
+  background-color: black;
 }
 
 #search-form-wrapper {
@@ -41,10 +122,15 @@
   border-style: solid;
   border-color: black;
   border-radius: 20px;
+  margin: 5px;
   background-color: #808080;
   display:inline-block;
+  transition: background-color 0.2s;
 }
-.lit {
+.search-selector-button:hover{
+  background-color: #32CD32;
+}
+.search-selector-button.lit {
   background-color: green;
 }
 
@@ -75,24 +161,73 @@
   margin: 5px;
   border-style: solid;
   border-radius: 10px;
+  transition: background-color 0.5s ease;
 }
 .prevnext-button:active {
-  background-color: green;
+  background-color: #006400;
+}
+.prevnext-button:hover {
+  background-color: #32CD32;
 }
 
 img.search-result-image {
   /* max-width: 200px; */
   max-height: 200px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  margin: 10px;
+  transition: all .2s;
+  /* float: left; */
+}
+img.search-result-image:hover{
+  /* transform: scale(1.1); */
+  border-color: #32CD32;
 }
 
 .search-result-image-wrapper {
-  border-style: solid;
+  /* border-style: solid;
   border-color: black;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
+  border-radius: 10px; */
+  text-align: center;
+  /* margin: 10px; */
   display:inline-block;
-  background-color: #808080;
+  /* background-color: #808080; */
+}
+
+.memeify-button {
+  text-align: center;
+  position: relative;
+  width: 80px;
+  bottom: 55px;
+  left: 15px;
+  background-color: #202020;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: background-color 0.2s, opacity 0.5s;
+  display: block;
+  /* float: left; */
+}
+/* .memeify-button:hover .search-result-image{
+  transform: scale(1.1);
+} */
+.memeify-button:hover {
+  background-color: #006400;
+}
+.search-result-image-wrapper:hover .memeify-button{
+  opacity: 1
+}
+
+.memeify-button-toolbar {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #202020;
+  transition: background-color 0.2s,
+}
+.memeify-button-toolbar:hover {
+  background-color: #006400;
 }
 
 .fireLogo {

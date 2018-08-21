@@ -35,6 +35,8 @@ export default function SearchImagesForm (props) {
           <input id="search-bar" type='input'
             onChange={(event)=>props.changeSearch(event.target.value)}
             value={props.searchValue}
+            disabled={props.api === null ? true : false}
+            placeholder={props.api === null ? 'Select image collection' : ''}
            />
         </form>
       </div>

@@ -1,39 +1,41 @@
 import React, { Component } from 'react';
-import CaptionForm from './CaptionForm'
+import MemeBracket from './MemeBracket'
+import FaceoffContainer from './FaceoffContainer'
+import MemePool from './MemePool'
 
 class AppPage extends Component {
 
-  renderImgJSX = () => {
-    return this.props.images.map( img => {
-      return ( <div key={img.id}>
-        <img src={img.avatar_url} alt={img.name} id={img.id} onClick={this.handleClick}>
-        </img>
-        {this.captionFieldLogic(img.id)}
-
-
-      </div>
-    )
-  })
-}
-
-
-  captionFieldLogic = id => {
-    return (id === Number(this.props.captionFieldId)) ? <CaptionForm parentImageId={id} /> : null
-  }
-
-  handleClick = event => {
-    this.props.renderCaptionField(event.target.id)
-   }
-
   render() {
-    console.log('state was set')
-    console.log(this.props.captionFieldId)
     return (
       <div>
-        {this.renderImgJSX()}
+        <MemeBracket />
+        <FaceoffContainer />
+        <MemePool memeObjs={this.props.memeObjs}/>
       </div>
     )
   }
+
+  //   renderImgJSX = () => {
+  //     return this.props.images.map( img => {
+  //       return ( <div key={img.id}>
+  //         <img src={img.avatar_url} alt={img.name} id={img.id} onClick={this.handleClick}>
+  //         </img>
+  //         {this.captionFieldLogic(img.id)}
+  //
+  //
+  //       </div>
+  //     )
+  //   })
+  // }
+
+
+    // captionFieldLogic = id => {
+    //   return (id === Number(this.props.captionFieldId)) ? <CaptionForm parentImageId={id} /> : null
+    // }
+    //
+    // handleClick = event => {
+    //   this.props.renderCaptionField(event.target.id)
+    //  }
 
 }
 

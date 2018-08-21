@@ -1,20 +1,24 @@
 //All generated memes will render here
 
+import uuid from 'uuid'
 import React, { Component } from 'react'
 import IndividualMeme from './IndividualMeme'
 
+
 class MemePool extends Component {
 
-  memeMapper = () => {
-    return this.props.allMemes.map(meme => <IndividualMeme id={meme.id} meme={meme}/>)
+  renderMemeJSX = () => {
+    return this.props.memeObjs.map(meme => {
+      return <IndividualMeme src={meme.src} caption={meme.caption} key={uuid()}/>
+    })
   }
 
+
   render() {
-    //console.log(this.props.allMemes)
     return (
       <div>
         Vote for your Favorite Memes!
-        {this.memeMapper()}
+        {this.renderMemeJSX()}
       </div>
     )
   }

@@ -5,7 +5,7 @@ import '../index.css';
 import logo from '../images/logo.png'
 import UserProfilePage from './UserProfilePage'
 import MemePool from './MemePool'
-import SearchImagesContainer from './SearchImagesContainer'
+import SearchCreateContainer from './SearchCreateContainer'
 
 
 // NavLinks styling
@@ -19,31 +19,20 @@ const linkStyle = {
 }
 
 
-const home = () => <SearchImagesContainer />;
-const profile = () => <UserProfilePage />;;
-const memePool = () => <MemePool />;
 
-
-const NavHeader = () => {
+const NavHeader = (props) => {
 	return (
-		<div className="App">
+		<div className="Header-Container">
 			<header className="App-header">
 				<img src={logo} className="fireLogo" alt="" />
 				<h1 className="App-title">Meme Wars</h1>
 				<span className="tagline">One Meme to Rule Them All</span>
 				<span>
-							<NavLink activeClassName="active" to="/home" style={linkStyle}> Create </NavLink>
-							<NavLink activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
-							<NavLink activeClassName="active" to="/all_memes" style={linkStyle}> All Memes </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/" style={linkStyle}> Home </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/create" style={linkStyle}> Create A Meme </NavLink>
 				</span>
 			</header>
-			<div>
-				<span className="App-intro">
-								<Route path="/home" component={ home } />
-								<Route path="/profile" component={ profile } />
-								<Route path="/all_memes" component={ memePool } />
-				</span>
-			</div>
 		</div>
 	)
 }

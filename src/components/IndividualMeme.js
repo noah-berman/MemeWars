@@ -1,4 +1,8 @@
-import React, { Component } from 'react'
+import React,  { Component, Fragment } from 'react'
+import { NavLink } from 'react-router-dom';
+import CaptionForm from './CaptionForm';
+
+//Just created some CSS for background over-ride, enlargment, flexible boundaries, etc.
 
 class IndividualMeme extends Component {
 
@@ -18,18 +22,17 @@ class IndividualMeme extends Component {
     }
   }
 
-///Add image size constraints!
-
   render() {
     return (
       <div className="memeTile">
-        <img src={this.props.meme.url} alt="" />
-        <h3>{this.props.meme.caption}</h3>
-        <button className="button" onClick={this.voteForMeme}>Vote</button>
+        <figure className="image-container">
+          <img className="scaled" src={this.props.src} alt={this.props.caption} />
+          <figcaption className="caption">{this.props.caption}</figcaption>
+          <button className="button" onClick={this.voteForMeme}>Vote</button>
+        </figure>
       </div>
-    )
+    );
   }
-
 }
 
 export default IndividualMeme;
