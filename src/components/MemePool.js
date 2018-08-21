@@ -17,6 +17,7 @@ class MemePool extends Component {
   render() {
     return (
       <div>
+        <h1 className="memepool-header">All Memes</h1>
         {this.renderMemeJSX()}
       </div>
     )

@@ -30,7 +30,7 @@ class AppPage extends Component {
   render() {
     return (
       <div>
-        <MemeBracket />
+        {/* <MemeBracket /> */}
         <FaceoffContainer />
         <MemePool memeObjs={this.props.memeObjs}/>
       </div>
