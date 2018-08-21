@@ -6,7 +6,7 @@ import AppPage from './components/AppPage'
 import SearchCreateContainer from './components/SearchCreateContainer'
 import NavHeader from './components/NavHeader';
 import UserProfilePage from './components/UserProfilePage';
-import MemePool from './components/MemePool';
+import MemeGenerator from './components/MemeGenerator'
 
 
 
@@ -23,8 +23,10 @@ import MemePool from './components/MemePool';
 //   ImageSearch => CreateMeme
 
 
-const profile = () => <UserProfilePage />;;
-const create = () => <SearchCreateContainer />;
+const profile = () => <UserProfilePage />;
+//const create = () => <SearchCreateContainer />;
+
+const create = () => <MemeGenerator />;
 
 class App extends Component {
 
@@ -48,6 +50,16 @@ class App extends Component {
     })
   }
 
+  setCaption = (memeCaption) => {
+    let meme = {"src": this.props.src, "caption": memeCaption, }  // Need to set SRC to selected meme URL
+    const allMemes = [...this.state.memeObjs]
+    allMemes.push(meme)
+    this.setState({
+      memeObjs: allMemes
+    })
+    //return <MemePool allMemes={this.state.allMemes}/>
+  }
+
   render() {
     return (
       <div className="App">
@@ -55,7 +67,7 @@ class App extends Component {
         <NavHeader handleClick={this.handleClick}/>
         {/* <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId} /> */}
         <Switch>
-          <Route path="/profile" component={ profile } />
+          <Route path="/profile" component={ profile } setCaption={this.setCaption} memeObjs={this.state.memeObjs}/>
           <Route path="/create" component={ create } />
           <Route exact path="/" render={(routerProps) => (
             <AppPage

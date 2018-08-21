@@ -2,14 +2,14 @@
 
 import uuid from 'uuid'
 import React, { Component } from 'react'
-import Meme from './Meme'
+import IndividualMeme from './IndividualMeme'
 
 
 class MemePool extends Component {
 
   renderMemeJSX = () => {
     return this.props.memeObjs.map(meme => {
-      return <Meme src={meme.src} caption={meme.caption} key={uuid()}/>
+      return <IndividualMeme src={meme.src} caption={meme.caption} key={uuid()}/>
     })
   }
 
@@ -17,6 +17,7 @@ class MemePool extends Component {
   render() {
     return (
       <div>
+        Vote for your Favorite Memes!
         {this.renderMemeJSX()}
       </div>
     )

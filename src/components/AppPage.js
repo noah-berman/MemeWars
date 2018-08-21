@@ -5,28 +5,6 @@ import MemePool from './MemePool'
 
 class AppPage extends Component {
 
-//   renderImgJSX = () => {
-//     return this.props.images.map( img => {
-//       return ( <div key={img.id}>
-//         <img src={img.avatar_url} alt={img.name} id={img.id} onClick={this.handleClick}>
-//         </img>
-//         {this.captionFieldLogic(img.id)}
-//
-//
-//       </div>
-//     )
-//   })
-// }
-
-
-  // captionFieldLogic = id => {
-  //   return (id === Number(this.props.captionFieldId)) ? <CaptionForm parentImageId={id} /> : null
-  // }
-  //
-  // handleClick = event => {
-  //   this.props.renderCaptionField(event.target.id)
-  //  }
-
   render() {
     return (
       <div>
@@ -36,6 +14,28 @@ class AppPage extends Component {
       </div>
     )
   }
+
+  //   renderImgJSX = () => {
+  //     return this.props.images.map( img => {
+  //       return ( <div key={img.id}>
+  //         <img src={img.avatar_url} alt={img.name} id={img.id} onClick={this.handleClick}>
+  //         </img>
+  //         {this.captionFieldLogic(img.id)}
+  //
+  //
+  //       </div>
+  //     )
+  //   })
+  // }
+
+
+    // captionFieldLogic = id => {
+    //   return (id === Number(this.props.captionFieldId)) ? <CaptionForm parentImageId={id} /> : null
+    // }
+    //
+    // handleClick = event => {
+    //   this.props.renderCaptionField(event.target.id)
+    //  }
 
 }
 
