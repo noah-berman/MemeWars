@@ -305,7 +305,7 @@ body {font-family: 'Optima', sans-serif;background: no-repeat #000;background-si
 }
 
 .memeTile:hover {
-  transform: scale(1.25);
+  transform: scale(1.05);
 }
 
 .button {
