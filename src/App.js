@@ -7,7 +7,7 @@ import SearchImagesContainer from './components/SearchImagesContainer'
 import NavHeader from './components/NavHeader';
 import UserProfilePage from './components/UserProfilePage';
 import MemePool from './components/MemePool';
-import CreateMeme from './components/CreateMeme';
+
 
 
 // **** Roadmap ****
@@ -22,20 +22,17 @@ import CreateMeme from './components/CreateMeme';
 //     myMemes
 //   ImageSearch => CreateMeme
 
-const home = () => <AppPage />;
+
 const profile = () => <UserProfilePage />;;
 const memePool = () => <MemePool />;
-const createMeme = () => <CreateMeme />;
-
 
 class App extends Component {
 
   state = {
     images: [],
-    displayImages: [],
     captionFieldId: '',
     currentPage: 'home',
-    memeObjs: [],
+    memeObjs: [{src: 'https://i.imgur.com/7PSbZIv.jpg', caption: "The truth hurts"}, {src: 'https://i.imgur.com/qMreRhA.jpg', caption: "haters gonna hate"}, {src: 'https://i.imgur.com/tOzGyZt.jpg', caption: "this is a grilled cheese meme"}],
   }
 
   renderCaptionField = (objId) => {
@@ -58,10 +55,14 @@ class App extends Component {
         <NavHeader handleClick={this.handleClick}/>
         {/* <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId} /> */}
         <Switch>
-          <Route path="/home" component={ home } />
           <Route path="/profile" component={ profile } />
           <Route path="/image_search" component={ memePool } />
-          <Route path="/create_meme" component={ createMeme } />
+          <Route exact path="/" render={(routerProps) => (
+            <AppPage
+              {...routerProps}
+              memeObjs={this.state.memeObjs}
+            />
+          )} />
         </Switch>
 
       </div>

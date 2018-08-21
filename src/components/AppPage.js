@@ -32,7 +32,7 @@ class AppPage extends Component {
       <div>
         <MemeBracket />
         <FaceoffContainer />
-        <MemePool />
+        <MemePool memeObjs={this.props.memeObjs}/>
       </div>
     )
   }
