@@ -3,6 +3,7 @@
 import React from 'react'
 import SearchImagesForm from './SearchImagesForm'
 import SearchImagesResults from './SearchImagesResults'
+import MemeGenerator from './MemeGenerator'
 
 import {imgurClientId, giphyKey} from '../apikeys/apikeys.js'
 
@@ -17,7 +18,8 @@ export default class SearchCreateContainer extends React.Component {
     giphyResults: [],
     prevGiphySearch: '',
     giphyOffset: 0,
-    create: false
+    create: false,
+    selectedImage: null
   }
 
   changeSearch = (value) => {
@@ -136,10 +138,15 @@ export default class SearchCreateContainer extends React.Component {
     }
   }
 
-  showCreate = () => {
+  showCreate = (imageObj, api) => {
     this.setState({
+      selectedImage: {
+        api: api,
+        apiId: imageObj.id,
+        src: api === 'imgur' ? imageObj.link : imageObj.images.original.url,
+      },
       create: true
-    })
+    }, ()=>console.log(this.state))
   }
 
   render(){
@@ -166,7 +173,7 @@ export default class SearchCreateContainer extends React.Component {
          </React.Fragment>
           )
           :
-          null // 'create' component
+          <MemeGenerator />
         }
       </div>
     )

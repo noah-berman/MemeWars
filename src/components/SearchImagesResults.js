@@ -130,10 +130,10 @@ export default class SearchImagesResults extends React.Component {
               this.setState({
                 photoIndex: (photoIndex + 1) % images.length
               })}
-            toolbarButtons={[<span
-              className='memeify-button-toolbar'
-              onClick={this.props.showCreate}
-              >Memeify</span>]}
+            // toolbarButtons={[<span
+            //   className='memeify-button-toolbar'
+            //   onClick={this.props.showCreate}
+            //   >Memeify</span>]}
           />
         )}
       </div>
