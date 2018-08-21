@@ -30,7 +30,7 @@ const NavHeader = (props) => {
 				<span>
 							<NavLink onClick={props.handleClick} activeClassName="active" to="/" style={linkStyle}> Home </NavLink>
 							<NavLink onClick={props.handleClick} activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
-							<NavLink onClick={props.handleClick} activeClassName="active" to="/create" style={linkStyle}> Create A Meme </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/create" style={linkStyle}> Make A Meme </NavLink>
 				</span>
 			</header>
 		</div>
