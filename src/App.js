@@ -26,7 +26,7 @@ import MemeGenerator from './components/MemeGenerator'
 const profile = () => <UserProfilePage />;
 //const create = () => <SearchCreateContainer />;
 
-const create = () => <MemeGenerator />;   ///////////////////////////////
+const create = () => <SearchCreateContainer />;   ///////////////////////////////
 
 class App extends Component {
 
