@@ -1,6 +1,6 @@
 import React,  { Component, Fragment } from 'react'
 import { NavLink } from 'react-router-dom';
-import CaptionForm from './CaptionForm';
+import CaptionForm from './CaptionForm';  
 
 //Just created some CSS for background over-ride, enlargment, flexible boundaries, etc.
 

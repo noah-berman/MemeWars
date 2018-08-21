@@ -1,4 +1,4 @@
-//Form to create a caption for the image
+//Form to create a caption for the image  
 
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';

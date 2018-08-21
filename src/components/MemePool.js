@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import IndividualMeme from './IndividualMeme'
 
 
-class MemePool extends Component {
+class MemePool extends Component {  
 
   renderMemeJSX = () => {
     return this.props.memeObjs.map(meme => {

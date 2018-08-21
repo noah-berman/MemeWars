@@ -1,6 +1,6 @@
 //how does this link?  as its own Nav Link, or through Meme Search/Image Selection?
 
-import React, { Component } from 'react'
+import React, { Component } from 'react'  
 import CaptionForm from './CaptionForm'
 //import react route?
 
