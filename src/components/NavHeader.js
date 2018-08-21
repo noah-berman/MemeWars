@@ -28,8 +28,8 @@ const NavHeader = (props) => {
 				<h1 className="App-title">Meme Wars</h1>
 				<span className="tagline">One Meme to Rule Them All</span>
 				<span>
-							<NavLink onClick={props.handleClick} activeClassName="active" to="/" style={linkStyle}> Home </NavLink>
-							<NavLink onClick={props.handleClick} activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/" style={linkStyle}> View All Memes </NavLink>
+							{/* <NavLink onClick={props.handleClick} activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink> */}
 							<NavLink onClick={props.handleClick} activeClassName="active" to="/create" style={linkStyle}> Make A Meme </NavLink>
 				</span>
 			</header>
