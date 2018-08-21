@@ -1,5 +1,31 @@
+/* /////////////////NAV BAR HEADER & SEARCH//////////////////////////////*/
+
 .App {
-  background-color: #101010;
+  background-color: white;
+}
+
+.App-header {
+  margin: auto;
+  text-align: center;
+}
+
+.App-header h1 {
+  margin: 5px;
+  text-align: center;
+}
+
+.App-header span {
+  display: block;
+  margin: 20px;
+}
+
+.App-header .tagline {
+  display: block;
+  margin: 10px;
+}
+
+.Header-Container {
+  margin: auto;
 }
 
 #search-form {
@@ -11,6 +37,58 @@
   text-align: center;
 }
 
+/*//////////////////////FACEOFF CONTAINER//////////////////////////////////*/
+
+.faceoff-container {
+  background-color: grey;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+}
+
+
+.faceoff-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
+
+/*//////////////////////MEME COMPONENT//////////////////////////////////*/
+
+.image-container {
+  display: inline-block;
+  width: 25%;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: blue;
+  font-size: 2em;
+  text-align: center;
+  border: 2px silver solid;
+}
+
+.image-container img {
+  display: inline;
+  max-height: 540px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0;
+  vertical-align: top;
+}
+
+figcaption {
+  background-color: black;
+  color: yellow;
+  font-family: Impact;
+  text-transform: uppercase;
+}
+
+/*//////////////////////HEADER COMPONENT//////////////////////////////////*/
+
 .App-header {
   background-color: #1CC1AA;
   height: 200px;
@@ -20,6 +98,10 @@
 
 .App-title {
   font-size: 2.0em;
+}
+
+#search-images-container {
+  background-color: black;
 }
 
 #search-form-wrapper {
@@ -40,6 +122,7 @@
   border-style: solid;
   border-color: black;
   border-radius: 20px;
+  margin: 5px;
   background-color: #808080;
   display:inline-block;
   transition: background-color 0.2s;
@@ -98,7 +181,8 @@ img.search-result-image {
   /* float: left; */
 }
 img.search-result-image:hover{
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
+  border-color: #32CD32;
 }
 
 .search-result-image-wrapper {
@@ -148,7 +232,7 @@ img.search-result-image:hover{
 
 .fireLogo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 90px;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -160,6 +244,152 @@ img.search-result-image:hover{
   font-family: "Trebuchet MS", Helvetica, sans-serif
 }
 
+/*/////////////////ROUTE BUTTON////////////////////////////*/
+
 .active {
   background: orange;
 }
+
+/* /////////////////BRACKET //////////////////////////////*/
+
+body {font-family: 'Optima', sans-serif;background: no-repeat #000;background-size: cover;min-height: 100%;margin: 0;}
+#bracket {overflow:hidden;background-color: #e1e1e1;background-color:rgba(225,225,225,0.9);padding-top: 20px;font-size: 12px;padding: 40px 40px;}
+.container {max-width: 1100px;margin: 0 auto;display:block;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: -webkit-flex;display: flex;-webkit-flex-direction:row;flex-direction: row;}
+.split {display:block;float:left;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;width: 42%;-webkit-flex-direction:row;-moz-flex-direction:row;flex-direction:row;}
+.split-right {display:block;float:right;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;width: 42%;-webkit-flex-direction:row;-moz-flex-direction:row;flex-direction:row;}
+.champion {float:left;display:block;width: 16%;-webkit-flex-direction:row;flex-direction:row;-webkit-align-self:center;align-self:center;margin-top: -15px;text-align: center;padding: 230px 0\9;}
+.champion i {color: #a0a6a8; font-size: 45px;padding: 10px 0; }
+.round {display:block;float:left;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;width:95%;width:30.8333%\9;}
+.round-right {display:block;float:right;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;width:95%;width:30.8333%\9;}
+.split-two {}
+.split-one .round {margin: 0 2.5% 0 0;}
+.split-two .round-right {margin: 0 0 0 2.5%;}
+.matchup {margin:0;width: 100%;padding: 10px 0;height:60px;-webkit-transition: all 0.2s;transition: all 0.2s;}
+.votes {font-size: 11px;text-transform: uppercase;float: right;color: #2C7399;font-weight: bold;font-family: 'Roboto Condensed', sans-serif;position: absolute;right: 5px;}
+.team {padding: 0 5px;margin: 3px 0;height: 25px; line-height: 25px;white-space: nowrap; overflow: hidden;position: relative;}
+.round-two .matchup {margin:0; height: 60px;padding: 50px 0;}
+.round-three .matchup {margin:0; height: 60px; padding: 130px 0;}
+.round-details {font-family: 'Optima', sans-serif; font-size: 13px; color: #2C7399;text-transform: uppercase;text-align: center;height: 40px;}
+.champion li, .round li {background-color: #fff;box-shadow: none; opacity: 0.45;}
+.current li {opacity: 1;}
+.current li.team {background-color: #fff;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);opacity: 1;}
+.vote-options {display: block;height: 52px;}
+.share .container {margin: 0 auto; text-align: center;}
+.share-icon {font-size: 24px; color: #fff;padding: 25px;}
+.share-wrap {max-width: 1100px; text-align: center; margin: 60px auto;}
+.final {margin: 4.5em 0;}
+
+
+/*///////////////////////MEME TILES///////////////////////////////////*/
+
+.memeTile {
+  display: inline;
+  background-position: center 90%;
+  float: left;
+  margin: 2%;
+  padding: 1%;
+  outline: #3B0B0B thick solid;
+  transition: 0.75s;
+  opacity: 1;
+  background-color: #7222DE !important;
+}
+
+.memeTile:hover {
+  transform: scale(1.25);
+}
+
+.button {
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {opacity: 1}
+
+
+/* .memeTile h1 {
+  color: 'white';
+} */
+
+/* .minMemeTile {
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+}
+
+.maxMemeTile {
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+} */
+
+
+/*/////////////////////KEEP JUST IN CASE/////////////////////////////////////*/
+
+/* @-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+} */
+
+
+/* @media screen and (min-width: 981px) and (max-width: 1099px) {
+  .container {margin: 0 1%;}
+  .champion {width: 14%;}
+  .split {width:43%; }
+  .split-one .vote-box {margin-left: 138px;}
+}
+
+@media screen and (max-width: 980px) {
+  .container {-webkit-flex-direction:column;-moz-flex-direction:column;flex-direction:column;}
+  .split, .champion {width: 90%;margin: 35px 5%;}
+  .champion {-webkit-box-ordinal-group:3;-moz-box-ordinal-group:3;-ms-flex-order:3;-webkit-order:3;order:3;}
+  .split {border-bottom: 1px solid #b6b6b6; padding-bottom: 20px;}
+}
+
+@media screen and (max-width: 400px) {
+
+  .split {width: 95%;margin: 25px 2.5%;}
+  .round {width:21%;}
+  .current {-webkit-flex-grow:1;-moz-flex-grow:1;flex-grow:1;}
+  .round-details {font-size: 90%;}
+
+} */

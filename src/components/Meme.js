@@ -1,11 +1,18 @@
-import React,  { Component } from 'react'
-import CaptionForm from './CaptionField'
+import React,  { Component, Fragment } from 'react'
 
-class App extends Component {
+
+//Just created some CSS for background over-ride, enlargment, flexible boundaries, etc.
+
+class Meme extends Component {
   render() {
     return (
-      <div>
-      </div>
+      <figure className="image-container">
+        <img className="scaled" src={this.props.src} alt={this.props.caption} />
+        <figcaption className="caption">{this.props.caption}</figcaption>
+        {/* <button className="button"> Vote </button> */}
+      </figure>
     );
   }
 }
+
+export default Meme;
