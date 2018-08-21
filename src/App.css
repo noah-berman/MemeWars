@@ -56,6 +56,16 @@
 
 }
 
+/*//////////////////////MEME POOL///////////////////////////////////////*/
+
+.memepool-header {
+  margin: auto;
+  text-align: center;
+  font-size: 3em;
+  border-top: 20px black dotted;
+  border-bottom: 20px black dotted;
+  background-color: white;
+}
 
 /*//////////////////////MEME COMPONENT//////////////////////////////////*/
 

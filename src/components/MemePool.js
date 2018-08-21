@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import IndividualMeme from './IndividualMeme'
 
 
-class MemePool extends Component {  
+class MemePool extends Component {
 
   renderMemeJSX = () => {
     return this.props.memeObjs.map(meme => {
@@ -17,7 +17,7 @@ class MemePool extends Component {
   render() {
     return (
       <div>
-        Vote for your Favorite Memes!
+        <h1 className="memepool-header">All Memes</h1>
         {this.renderMemeJSX()}
       </div>
     )
