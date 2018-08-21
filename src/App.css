@@ -100,6 +100,10 @@ figcaption {
   font-size: 2.0em;
 }
 
+#search-images-container {
+  background-color: black;
+}
+
 #search-form-wrapper {
   text-align: center;
 }
@@ -118,6 +122,7 @@ figcaption {
   border-style: solid;
   border-color: black;
   border-radius: 20px;
+  margin: 5px;
   background-color: #808080;
   display:inline-block;
   transition: background-color 0.2s;
@@ -176,7 +181,8 @@ img.search-result-image {
   /* float: left; */
 }
 img.search-result-image:hover{
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
+  border-color: #32CD32;
 }
 
 .search-result-image-wrapper {

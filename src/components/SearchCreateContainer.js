@@ -6,7 +6,7 @@ import SearchImagesResults from './SearchImagesResults'
 
 import {imgurClientId, giphyKey} from '../apikeys/apikeys.js'
 
-export default class SearchImagesContainer extends React.Component {
+export default class SearchCreateContainer extends React.Component {
 
   state = {
     api: null,
@@ -16,7 +16,8 @@ export default class SearchImagesContainer extends React.Component {
     imgurPage: 0,
     giphyResults: [],
     prevGiphySearch: '',
-    giphyOffset: 0
+    giphyOffset: 0,
+    create: false
   }
 
   changeSearch = (value) => {
@@ -135,24 +136,38 @@ export default class SearchImagesContainer extends React.Component {
     }
   }
 
+  showCreate = () => {
+    this.setState({
+      create: true
+    })
+  }
+
   render(){
     return (
-      <div>
-        <SearchImagesForm
-          changeSearch={this.changeSearch}
-          searchValue={this.state.search}
-          beginSearch={this.beginSearch}
-          api={this.state.api}
-          switchApi={this.switchApi}
-         />
-        <SearchImagesResults
-          imgurResults={this.state.imgurResults}
-          imgurNext={this.imgurNext}
-          imgurPrev={this.imgurPrev}
-          giphyResults={this.state.giphyResults}
-          giphyNext={this.giphyNext}
-          giphyPrev={this.giphyPrev}
-         />
+      <div id="search-images-container">
+        {!this.state.create ? (
+          <React.Fragment>
+          <SearchImagesForm
+            changeSearch={this.changeSearch}
+            searchValue={this.state.search}
+            beginSearch={this.beginSearch}
+            api={this.state.api}
+            switchApi={this.switchApi}
+           />
+          <SearchImagesResults
+            imgurResults={this.state.imgurResults}
+            imgurNext={this.imgurNext}
+            imgurPrev={this.imgurPrev}
+            giphyResults={this.state.giphyResults}
+            giphyNext={this.giphyNext}
+            giphyPrev={this.giphyPrev}
+            showCreate={this.showCreate}
+           />
+         </React.Fragment>
+          )
+          :
+          null // 'create' component
+        }
       </div>
     )
   }

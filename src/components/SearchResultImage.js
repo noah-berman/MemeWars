@@ -25,7 +25,7 @@ export default function SearchResultImage (props) {
       {parseImageData()}
       <span
         className="memeify-button"
-        // onClick={}
+        onClick={props.showCreate}
         >Memeify</span>
     </span>
   )

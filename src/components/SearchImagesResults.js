@@ -84,6 +84,7 @@ export default class SearchImagesResults extends React.Component {
         imageObj={imageObj}
         openLightbox={this.openLightbox}
         index={index}
+        showCreate={this.props.showCreate}
       />
     })
   }
@@ -97,6 +98,7 @@ export default class SearchImagesResults extends React.Component {
         imageObj={imageObj}
         openLightbox={this.openLightbox}
         index={index}
+        showCreate={this.props.showCreate}
       />
     })
   }
@@ -130,7 +132,7 @@ export default class SearchImagesResults extends React.Component {
               })}
             toolbarButtons={[<span
               className='memeify-button-toolbar'
-              // onClick={}
+              onClick={this.props.showCreate}
               >Memeify</span>]}
           />
         )}

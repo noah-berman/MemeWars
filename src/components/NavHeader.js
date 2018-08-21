@@ -5,7 +5,7 @@ import '../index.css';
 import logo from '../images/logo.png'
 import UserProfilePage from './UserProfilePage'
 import MemePool from './MemePool'
-import SearchImagesContainer from './SearchImagesContainer'
+import SearchCreateContainer from './SearchCreateContainer'
 
 
 // NavLinks styling
@@ -19,10 +19,6 @@ const linkStyle = {
 }
 
 
-const home = () => <SearchImagesContainer />;
-const profile = () => <UserProfilePage />;;
-const memePool = () => <MemePool />;
-
 
 const NavHeader = (props) => {
 	return (
@@ -34,7 +30,7 @@ const NavHeader = (props) => {
 				<span>
 							<NavLink onClick={props.handleClick} activeClassName="active" to="/" style={linkStyle}> Home </NavLink>
 							<NavLink onClick={props.handleClick} activeClassName="active" to="/profile" style={linkStyle} > Profile </NavLink>
-							<NavLink onClick={props.handleClick} activeClassName="active" to="/all_memes" style={linkStyle}> All Memes </NavLink>
+							<NavLink onClick={props.handleClick} activeClassName="active" to="/create" style={linkStyle}> Create A Meme </NavLink>
 				</span>
 			</header>
 		</div>

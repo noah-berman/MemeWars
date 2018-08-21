@@ -3,7 +3,7 @@ import './App.css';
 
 import { Switch, Route } from 'react-router-dom';
 import AppPage from './components/AppPage'
-import SearchImagesContainer from './components/SearchImagesContainer'
+import SearchCreateContainer from './components/SearchCreateContainer'
 import NavHeader from './components/NavHeader';
 import UserProfilePage from './components/UserProfilePage';
 import MemePool from './components/MemePool';
@@ -24,7 +24,7 @@ import MemePool from './components/MemePool';
 
 
 const profile = () => <UserProfilePage />;;
-const memePool = () => <MemePool />;
+const create = () => <SearchCreateContainer />;
 
 class App extends Component {
 
@@ -56,7 +56,7 @@ class App extends Component {
         {/* <AppPage images={this.state.displayImages} renderCaptionField={this.renderCaptionField} captionFieldId={this.state.captionFieldId} /> */}
         <Switch>
           <Route path="/profile" component={ profile } />
-          <Route path="/image_search" component={ memePool } />
+          <Route path="/create" component={ create } />
           <Route exact path="/" render={(routerProps) => (
             <AppPage
               {...routerProps}
