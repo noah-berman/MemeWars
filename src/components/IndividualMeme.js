@@ -29,13 +29,13 @@ class IndividualMeme extends Component {
 
   render() {
     return (
-      <div className="memeTile">
-        <figure className="image-container">
+      // <span className="memeTile">
+        <figure className={this.props.className} >
           <img className="scaled" src={this.props.meme.image} alt={this.props.caption} />
           <figcaption className="caption">{this.props.meme.caption}</figcaption>
           <button className="button" onClick={this.voteForMeme}>Vote</button>
         </figure>
-      </div>
+      // </span>
     );
   }
 }

@@ -16,8 +16,8 @@ class MemeGenerator extends Component {
 
   render() {
     return (
-      <div className="memeTile">
-        <img src={this.props.meme.src} height="200px" width="30%" />
+      <div className="meme-generator-wrapper">
+        <img className="meme-generator-image" src={this.props.meme.src} height="200px" width="30%" />
         <CaptionForm writeCaption={this.writeCaption} memeObjs={this.props.memeObjs}/>
       </div>
     )

@@ -28,6 +28,10 @@
   margin: auto;
 }
 
+#winston{
+  opacity: .15
+}
+
 #search-form {
   margin: 30px;
 }
@@ -58,13 +62,18 @@
 
 /*//////////////////////MEME POOL///////////////////////////////////////*/
 
+#meme-pool-wrapper{
+  background: no-repeat black;
+}
+
 .memepool-header {
   margin: auto;
   text-align: center;
   font-size: 3em;
   border-top: 20px black dotted;
   border-bottom: 20px black dotted;
-  background-color: white;
+  background-color: #6433E9;
+  font-family: Chalkduster, fantasy;
 }
 
 /*//////////////////////MEME COMPONENT//////////////////////////////////*/
@@ -78,6 +87,17 @@
   font-size: 2em;
   text-align: center;
   border: 2px silver solid;
+  transition: 0.75s;
+  background-color: #5E38C4;
+}
+.image-container:hover {
+  transform: scale(1.05);
+}
+
+.top-meme{
+  border-color: yellow;
+  border-width: 20px;
+  border-style:  double;
 }
 
 .image-container img {
@@ -254,6 +274,33 @@ img.search-result-image:hover{
   font-family: "Trebuchet MS", Helvetica, sans-serif
 }
 
+/*/////////////////MEME GENERATOR//////////////////////////*/
+
+.meme-generator-wrapper{
+  text-align: center;
+}
+.meme-generator-image{
+  margin: 10px;
+}
+
+#meme-text-input{
+  font-size: 28px;
+  background-color: #BEBEBE;
+  padding: 10px;
+  border-radius: 10px;
+}
+#meme-submit-button{
+  display: block;
+  text-align: center;
+}
+#meme-submit-button > a{
+  /* display: block; */
+  font-size: 24px;
+  max-height: 50px;
+  max-width: 126px;
+  padding: 25px;
+}
+
 /*/////////////////ROUTE BUTTON////////////////////////////*/
 
 .active {
@@ -292,7 +339,7 @@ body {font-family: 'Optima', sans-serif;background: no-repeat #000;background-si
 
 /*///////////////////////MEME TILES///////////////////////////////////*/
 
-.memeTile {
+/* .memeTile {
   display: inline;
   background-position: center 90%;
   float: left;
@@ -302,11 +349,11 @@ body {font-family: 'Optima', sans-serif;background: no-repeat #000;background-si
   transition: 0.75s;
   opacity: 1;
   background-color: #7222DE !important;
-}
+} */
 
-.memeTile:hover {
+/* .memeTile:hover {
   transform: scale(1.05);
-}
+} */
 
 .button {
   border: none;
@@ -319,9 +366,15 @@ body {font-family: 'Optima', sans-serif;background: no-repeat #000;background-si
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 5px;
+  /* border-color: ;
+  border-style: solid; */
 }
 
-.button:hover {opacity: 1}
+.button:hover {
+  opacity: 0.8;
+
+}
 
 
 /* .memeTile h1 {

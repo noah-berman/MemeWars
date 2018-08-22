@@ -24,10 +24,10 @@ class CaptionForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <textarea type="text" value={this.state.caption} name="caption" onChange={this.handleChange} placeholder="Enter Meme Caption..." cols="20" rows="5"></textarea>
+          <textarea id="meme-text-input" type="text" value={this.state.caption} name="caption" onChange={this.handleChange} placeholder="Enter Meme Caption..." cols="40" rows="5"></textarea>
         </label>
-        <span>
-          <NavLink onClick={this.handleSubmit} className="button" to="/" memeObjs={this.props.memeObjs}> Publish </NavLink>
+        <span id="meme-submit-button">
+          <NavLink onClick={this.handleSubmit} className="button" to="/" memeObjs={this.props.memeObjs}> Meme It </NavLink>
         </span>
       </form>
     )

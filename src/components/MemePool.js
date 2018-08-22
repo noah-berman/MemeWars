@@ -8,8 +8,9 @@ import IndividualMeme from './IndividualMeme'
 class MemePool extends Component {
 
   renderMemeJSX = () => {
-    return this.sortByVotes().map(meme => {
+    return this.sortByVotes().map((meme, index) => {
       return <IndividualMeme
+        className={index === 0 ? "image-container top-meme" : "image-container"}
         meme={meme}
         key={uuid()}
         updateMemeVote={this.props.updateMemeVote}
@@ -32,8 +33,8 @@ class MemePool extends Component {
 
   render() {
     return (
-      <div>
-        <h1 className="memepool-header">All Memes</h1>
+      <div id="meme-pool-wrapper">
+        <h1 className="memepool-header">The Dank Stash</h1>
         {this.renderMemeJSX()}
       </div>
     )
