@@ -10,7 +10,10 @@ class AppPage extends Component {
       <div>
         {/* <MemeBracket /> */}
         <FaceoffContainer />
-        <MemePool memeObjs={this.props.memeObjs}/>
+        <MemePool
+          memeObjs={this.props.memeObjs}
+          updateMemeVote={this.props.updateMemeVote}
+          />
       </div>
     )
   }

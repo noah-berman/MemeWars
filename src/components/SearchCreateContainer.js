@@ -146,7 +146,7 @@ export default class SearchCreateContainer extends React.Component {
         src: api === 'imgur' ? imageObj.link : imageObj.images.original.url,
       },
       create: true
-    }, ()=>console.log(this.state))
+    })
   }
 
   render(){
@@ -173,7 +173,9 @@ export default class SearchCreateContainer extends React.Component {
          </React.Fragment>
           )
           :
-          <MemeGenerator />
+          <MemeGenerator meme={this.state.selectedImage}    memeObjs={this.props.memeObjs}
+            setCaption={this.props.setCaption}
+           />
         }
       </div>
     )
